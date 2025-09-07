@@ -149,7 +149,7 @@ class TestMainWindowLoad(TestMainWindowBase):
 
     def setUp(self):
         super().setUp()
-        fd, filename = tempfile.mkstemp()
+        fd, filename = tempfile.mkstemp(suffix=".ows")
         self.file = os.fdopen(fd, "w+b")
         self.filename = filename
 
@@ -178,10 +178,12 @@ class TestMainWindowLoad(TestMainWindowBase):
         w.current_document().setPath("")
 
         def exec(myself):
+            myself.setAcceptMode(QFileDialog.AcceptSave)
             myself.setOption(QFileDialog.DontUseNativeDialog)
             myself.setOption(QFileDialog.DontConfirmOverwrite)
             myself.selectFile(self.filename)
             myself.accept()
+            return True
 
         with patch("AnyQt.QtWidgets.QFileDialog.exec", exec):
             w.save_scheme()
