@@ -28,7 +28,17 @@ Or use the::
 
 to install from the sources.
 
+
 Documentation
 -------------
 
 Some incomplete documentation is available at https://orange-canvas-core.readthedocs.io
+
+
+Branch "alternative" in this fork
+---------------------------------
+
+On this branch I merge my changes without delay,
+Most of it will be or was already *"Pull Requested"* at
+`biolab repo <https://github.com/biolab/orange-canvas-core>`_ repository.
+
