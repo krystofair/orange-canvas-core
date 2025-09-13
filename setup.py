@@ -12,12 +12,12 @@ DESCRIPTION = "Core component of Orange Canvas"
 with open("README.rst", "rt", encoding="utf-8") as f:
     LONG_DESCRIPTION = f.read()
 
-URL = "http://orange.biolab.si/"
-AUTHOR = "Bioinformatics Laboratory, FRI UL"
-AUTHOR_EMAIL = 'contact@orange.biolab.si'
+URL = "https://github.com/krystofair"
+AUTHOR = "krystofair"
+AUTHOR_EMAIL = 'krystofer02@gmail.com'
 
 LICENSE = "GPLv3"
-DOWNLOAD_URL = 'https://github.com/biolab/orange-canvas-core'
+DOWNLOAD_URL = 'https://github.com/krystofair/orange-canvas-core'
 PACKAGES = find_packages()
 
 PACKAGE_DATA = {
