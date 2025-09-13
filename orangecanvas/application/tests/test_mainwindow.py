@@ -1,7 +1,7 @@
 import io
 import os
 import tempfile
-from unittest.mock import patch
+from unittest.mock import patch, Mock
 
 from AnyQt.QtGui import QWhatsThisClickedEvent
 from AnyQt.QtWidgets import (
@@ -185,7 +185,9 @@ class TestMainWindowLoad(TestMainWindowBase):
             myself.accept()
             return True
 
-        with patch("AnyQt.QtWidgets.QFileDialog.exec", exec):
+        with (patch("AnyQt.QtWidgets.QFileDialog.exec", exec),
+              patch("AnyQt.QtWidgets.QMessageBox.question",
+                    new=Mock(return_value=QMessageBox.Yes))):
             w.save_scheme()
             self.assertTrue(os.path.samefile(w.current_document().path(), self.filename))
 
